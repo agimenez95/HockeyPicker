@@ -1,0 +1,39 @@
+#PrizeMoneyContainer {
+    background-color: rgba(0, 176, 240, 0.60);
+  border-color: white;
+  border-width: thick;
+  border-style: ridge;
+  padding: 10px;
+  display: flex;
+}
+
+.prizeMoneyDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.prizeMoneyDisplay h1 {
+  font-size: 20px;
+}
+
+.prizeMoneyDisplay h1 center {
+
+  font-size: 60px;
+  color: white;
+  font-weight: bolder;
+}
+
+.prizeMoneyDisplay h2 {
+  font-size: 15px;
+
+}
+
+.prizeMoneyDisplay h2 a {
+  color: white;
+}
+
+.prizeMoneyDisplay h2 a:hover{
+  color:grey;
+}
