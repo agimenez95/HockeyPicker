@@ -7,10 +7,10 @@ function singlePicker($team1ID, $team2ID, $game){
   echo "<div id='$game'>";
     echo "<table><tr>";
       echo "<td><h3 id='home".$game."'>0</h3></td>";
-      echo "<td><input type='hidden' name='home$game' value='0'/><td>";
+      echo "<td><input  name='home$game' value='0'/><td>"; //type='hidden'
       echo "<td><h3>".$team1->getName()." vs. ".$team2->getName()."</h3></td>";
       echo "<td><h3 id='away".$game."'>0</h3></td>";
-      echo "<td><input type='hidden' name='away$game' value='0'/><td>";
+      echo "<td><input name='away$game' value='0'/><td>"; //type='hidden'
     echo "</tr></table>";
     echo "<table>
           <tr>
