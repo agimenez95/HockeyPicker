@@ -27,6 +27,12 @@ class Match {
     return $this->db->commit();
   }
 
+  public function setScoresForWeek() {
+    $this->db->beginTransaction();
+    // insert home and away team goals where actualResult == 1
+    // and homeTeamID == x and awayTeamID == y
+  }
+
   public function getMatchesForWeek(){
     $s = $this->db->prepare("
       select * from (

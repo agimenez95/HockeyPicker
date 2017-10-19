@@ -78,4 +78,5 @@ foreach ($r as $row){
     <button type="submit" >Submit matches for week 1</button>
   </form>
 </body>
+<script src="editingdatabaseteams.js"></script>
 </html>
