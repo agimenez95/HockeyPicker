@@ -26,6 +26,8 @@ body {
   flex: 0.2;
   justify-content: space-between;
   padding: 10px;
+  border-bottom: solid;
+  border-color: rgb(197, 236, 235);
   /* flex-wrap: nowrap; */
 }
 
@@ -37,6 +39,8 @@ body {
 }
 
 #logo {
+  border: 10px solid transparent;
+  border-image: url("../spbackground.png") 20 round;
   width: 20%;
   height: 10%;
   max-height: 140px;
@@ -92,24 +96,48 @@ table {
   width: 100%;
 }
 
+#MainBodyContainer{
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 25 auto;
+  background-image: url(../iceback.png);
+  background-size: cover;
+  padding: 0px;
+  margin: 0px;
+  border-style: groove;
+}
+
+#leftside{
+  flex: 1;
+  width: inherit;
+  padding: 30px;
+
+}
+
+h1 {
+  text-align: center;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+
 #MainBody {
   /* padding: 0px; */
   /* width: 99.8%; */
   /* margin: 0px; */
   /* border-color: green; */
-  background-image: url(../iceback.png);
 
-  background-size: cover;
-  flex: 25 auto;
+  flex: 9;
+
+  width: 80%;
+  margin: 0px;
+  padding: 30px;
+
   /* overflow-y: auto; */
   /* min-height: 0px; */
   /* display: flex; */
   /* flex-wrap: wrap; */
   /* flex-direction: column; */
   justify-content: center;
-  align-items: center;
-}
-
-#MainBody::after{
-
+  align-items: flex-start;
 }

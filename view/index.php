@@ -34,20 +34,11 @@
 
 	<div class="flex-item" id="menubar">
 
-		<!-- <div class="flex-item" id="menubar">
-		<div id="menu">
-			<a href="#">Results</a>
-			<a href="#">How to Play</a>
-			<a href="#">News</a>
-			<a href="#">League Tables</a>
-			<a href="#">Settings</a>
-			<a href="#">Feedback</a>
-		</div> -->
 
 				<table id="menu">
 			 <tr>
 					<th>Results</th>
-					<th>How to play</th>
+					<th><a href="rules.php">How to play</a></th>
 					<th>News</th>
 					<th>League Tables</th>
 					<th>Settings</th>
@@ -57,20 +48,36 @@
 			</table>
 	</div>
 
+	<div class="flex-item" id="MainBodyContainer">
+
+
+
+
+	<div class="flex-item" id ="leftside">
+
+
+						<div id="Prize Money Box">
+								<?php include 'prizemoney.php'; ?>
+
+						</div>
+
+	</div>
+
 	<div class="flex-item" id="MainBody">
 
 
 
-		<div id="Prize Money Box">
-				<?php include 'prizemoney.php'; ?>
 
-		</div>
-
-
-
-
+	<div id ="Score Picker">
+		<?php include 'scorepicker.php'; ?>
 
 	</div>
+
+
+
+</div>
+</div>
+
 
 <div class="flex-item" id="footer">
 	<em>Footer</em>

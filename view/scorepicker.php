@@ -1,5 +1,5 @@
 <?php
-	require '../logic/prereq.php';
+	// require '../logic/prereq.php';
   include '../logic/singlePicker.php';
 ?>
 <!doctype html>
@@ -7,11 +7,14 @@
 <head>
 <meta charset="utf-8">
 <title>Super Six Hockey</title>
+<link rel="stylesheet" href="../css/scorepickerblock.css">
 </head>
 
 <body>
-  <h1>Hockey Picker</h1>
-	<?php include "../logic/loginheader.php"; ?>
+	<div id="spcontainer">
+<!-- <h1>Hockey Picker</h1> -->
+	 <!-- <?php include "../logic/loginheader.php"; ?>  -->
+
 	<form name="formName" action="../logic/submitguess.php" method="post">
 		<?php
 	  $match = new Match(getDB());
@@ -19,6 +22,8 @@
 	  for ($i=0; $i < 6; $i++) {
 	    singlePicker($games[$i]["homeTeamID"], $games[$i]["awayTeamID"], $i);
 	  }
+		echo "<br><br>";
+		echo "<div class='bpbox'>";
     echo "<select name='bonusPlayer'>";
 			$bpm = new bonusplayermanager(getDB());
 			$allPlayers = $bpm->showAllOptions();
@@ -27,9 +32,14 @@
 				echo "<option value =".$punditsBonusPlayerID.">$value</option>";
 			}
 		echo "</select>";
+
 		?>
+	
     <input type="submit" value="Submit">
+	</div>
   </form>
-  <script src='../scripts/changescore.js' type="text/javascript"></script>
+
+	<script src='../scripts/changescore.js' type="text/javascript"></script>
+</div>
 </body>
 </html>

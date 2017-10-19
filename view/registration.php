@@ -9,10 +9,12 @@
 <head>
 <meta charset="utf-8">
 <title>Super Six Hockey</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="../css/homepage.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/css/menubar.css">
 </head>
 <body>
-  <h1>Hockey Picker</h1>
-  <h2>Registration</h2>
+  <?php include 'pageheader.php' ?>
   <table>
     <form action='../logic/registernewuser.php' method='post'>
       <tr>

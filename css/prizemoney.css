@@ -1,7 +1,7 @@
 #PrizeMoneyContainer {
-    background-color: rgba(0, 176, 240, 0.60);
-  border-color: white;
-  border-width: thick;
+    background-color: rgba(0, 0, 0, 0.40);
+  border-color: black;
+  border-width: medium;
   border-style: ridge;
   padding: 10px;
   display: flex;
@@ -16,17 +16,22 @@
 
 .prizeMoneyDisplay h1 {
   font-size: 20px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: rgb(0, 176, 240);
+  text-decoration: underline;
 }
 
 .prizeMoneyDisplay h1 center {
 
-  font-size: 60px;
+  font-size: 30px;
   color: white;
   font-weight: bolder;
 }
 
 .prizeMoneyDisplay h2 {
-  font-size: 15px;
+  font-size: 5px;
 
 }
 

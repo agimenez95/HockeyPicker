@@ -43,9 +43,12 @@ foreach ($r as $row){
     }
   </style>
 <meta charset="utf-8">
-<title></title>
+<title>Fixture Admin </title>
+<link rel="stylesheet" href="../css/homepage.css">
+<link rel="stylesheet" href="../css/scorepickerblock.css">
 </head>
 <body>
+  <?php include 'pageheader.php'?>
   <h1>NHL Gotta pick 'em all - Admin Fixture Selector</h1>
   <form action="../logic/insertweeklymatchup.php" method="post">
     <div class="matchContainer">

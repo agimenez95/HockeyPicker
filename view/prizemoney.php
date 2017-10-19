@@ -1,6 +1,6 @@
 
 <?php
-$prizeMoney=1000;
+$prizeMoney=100000;
 
  ?>
 
@@ -20,13 +20,10 @@ $prizeMoney=1000;
       <form class="prizeMoneyDisplay" action="registernewuser.php" method="post">
 
 
-        <h1>THE PRIZE MONEY CURRENTLY STANDS AT:<br><br>
+        <h1>Win<br><br>
         <center><strong><?php echo "£".$prizeMoney?></strong></center></h1>
 
 
-
-        <h2><a class="register" href="registernewuser.php">Login</a> to try and win this week.</h2>
-            <h2>Good Luck!</h2>
 
 
 

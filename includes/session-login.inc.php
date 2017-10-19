@@ -13,7 +13,7 @@
 </form>
 <form name="loginForm" action="../view/registration.php">
   <br>
-  <input type="submit" id="needAccount" class="submit1" value="I don't have an account" />
+  <input type="submit" id="needAccount" class="submit1" value="Register"/>
 </form>
 <?php
 // closing curly
