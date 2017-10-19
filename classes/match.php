@@ -1,7 +1,7 @@
 <?php
 class Match {
   protected $db;
-  private $id;
+  public $id;
 
   public function __construct(\PDO $db = null){
       $this->db = $db;
@@ -31,6 +31,33 @@ class Match {
           return false;
       }
     }
+    return $this->db->commit();
+  }
+
+  public function setGuessForTheWeek($homeid, $awayid, $homegoals, $awaygoals, $week){
+    if ($week == null) {
+      $week = 1;
+    } else {
+      $week ++;
+    }
+    $this->db->beginTransaction();
+    $stmt = $this->db->prepare("
+        insert into
+        Matchup (homeTeamID, awayTeamID, homeGoals,  awayGoals, weekID)
+        values (:homeID, :awayID, :homeGoals, :awayGoals, :week)
+    ");
+    $worked = $stmt->execute([
+        'homeID' => $homeid,
+        'awayID' => $awayid,
+        'homeGoals' => $homegoals,
+        'awayGoals' =>$awaygoals,
+        'week' => $week
+    ]);
+    if (!$worked){
+        $this->db->rollback();
+        return false;
+    }
+    $this->id = $this->db->lastInsertId();
     return $this->db->commit();
   }
 
