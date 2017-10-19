@@ -26,7 +26,7 @@ class GuessManager {
         return false;
     }
     $this->id = $this->db->lastInsertId();
-    return $this->db->commit();
+    //return $this->db->commit();
   }
 
   public function references($matchID, $guessID) {
@@ -44,7 +44,7 @@ class GuessManager {
         $this->db->rollback();
         return false;
     }
-    return $this->db->commit();
+    //return $this->db->commit();
   }
 }
 ?>
