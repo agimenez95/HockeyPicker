@@ -55,6 +55,7 @@ class Match {
           return false;
       }
     }
+    $this->db->commit();
   }
 
   public function setGuessForTheWeek($homeid, $awayid, $homegoals, $awaygoals, $week){

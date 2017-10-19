@@ -26,14 +26,14 @@ class GuessManager {
         return false;
     }
     $this->id = $this->db->lastInsertId();
-    //return $this->db->commit();
+    $this->db->commit();
   }
 
   public function references($matchID, $guessID) {
     $this->db->beginTransaction();
     $stmt = $this->db->prepare("
         insert into
-        Prediction (matchupID,  guessID)
+        Prediction (matchupID, guessID)
         values (:mid, :gid)
     ");
     $worked = $stmt->execute([
@@ -44,7 +44,7 @@ class GuessManager {
         $this->db->rollback();
         return false;
     }
-    //return $this->db->commit();
+    $this->db->commit();
   }
 }
 ?>
