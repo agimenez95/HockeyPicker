@@ -8,7 +8,7 @@ class Customer {
   private $pword;
   private $email;
   private $teamSupport;
-  private $pdo;
+  private $db;
 
   public function __construct(PDO $db = null){
     $this->db = $db;
