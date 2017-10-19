@@ -1,17 +1,32 @@
 <?php
 require '../logic/prereq.php';
-// var_dump($_POST);
-//
-// if (isset($_SESSION["userId"])) {
-//   # code...
-//   echo $_SESSION["userId"];
-// } else {
-//   echo "You did not sign in!";
-// }
 
-echo "<br>";
+//check to see if the user is logged in
+//check to see if the user has already guessed this week
 
-$match = new Match(getDB());
+$db = getDB();
+$match = new Match($db);
 $week = $match->getLatestWeek();
-echo $week;
+$games = $match->getMatchesForWeek();
+
+$uid = $_SESSION['userId'];
+
+// saving to the Guess table
+$gman = new GuessManager($db);
+$gman->save($uid, $week, $_POST['bonusPlayer']);
+$guessid = $gman->id;
+
+for ($i=0; $i < 6; $i++) {
+  $homeid = $games[$i]["homeTeamID"];
+  $scorehome = $_POST["home".$i];
+  $awayid = $games[$i]["awayTeamID"];
+  $scoreaway = $_POST["away".$i];
+  // saving to the Matchup table
+  $match->setGuessForTheWeek($homeid, $awayid, $scorehome, $scoreaway, $week);
+  $matchid =  $match->id;
+  // saving to the Prediction table
+  $gman->references($matchid, $guessid);
+}
+
+header('Location: ../view/index.php');
 ?>
