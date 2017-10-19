@@ -1,7 +1,7 @@
 <?php
 include_once '../logic/prereq.php';
 
-class guessmanager {
+class GuessManager {
   private $db;
   public $id;
 

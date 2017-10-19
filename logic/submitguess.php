@@ -1,5 +1,5 @@
 <?php
-require '../logic/prereq.php';
+include_once '../logic/prereq.php';
 
 //check to see if the user is logged in
 //check to see if the user has already guessed this week

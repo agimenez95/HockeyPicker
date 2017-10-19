@@ -55,7 +55,8 @@ class Match {
           return false;
       }
     }
-    
+  }
+
   public function setGuessForTheWeek($homeid, $awayid, $homegoals, $awaygoals, $week){
     if ($week == null) {
       $week = 1;

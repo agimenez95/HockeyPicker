@@ -1,5 +1,5 @@
 <?php
-	// require '../logic/prereq.php';
+	include_once '../logic/prereq.php';
   include '../logic/singlePicker.php';
 ?>
 <!doctype html>
@@ -32,9 +32,7 @@
 				echo "<option value =".$punditsBonusPlayerID.">$value</option>";
 			}
 		echo "</select>";
-
 		?>
-	
     <input type="submit" value="Submit">
 	</div>
   </form>
