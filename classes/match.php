@@ -8,16 +8,23 @@ class Match {
   }
 
   public function setMatchesForWeek(array $matches){
+    $week = $this->getLatestWeek();
+    if ($week == null) {
+      $week = 1;
+    } else {
+      $week ++;
+    }
     $this->db->beginTransaction();
     foreach ($matches as $match){
       $stmt = $this->db->prepare("
           insert into
-          Matchup ( homeTeamID,  awayTeamID, actualResult)
-          values (:homeTeam_id, :awayTeam_id, TRUE)
+          Matchup ( homeTeamID,  awayTeamID, actualResult, weekID)
+          values (:homeTeam_id, :awayTeam_id, TRUE, :week)
       ");
       $worked = $stmt->execute([
           'homeTeam_id' => $match['home'],
-          'awayTeam_id' => $match['away']
+          'awayTeam_id' => $match['away'],
+          'week' => $week
       ]);
       if (!$worked){
           $this->db->rollback();
@@ -25,6 +32,20 @@ class Match {
       }
     }
     return $this->db->commit();
+  }
+
+  public function getLatestWeek(){
+    $s = $this->db->prepare("
+      select weekID from Matchup
+      where actualResult = TRUE
+      order by id desc limit 1
+    ");
+    $s->execute();
+    $row = $s->fetchAll();
+    if (!$row){
+      return null;
+    }
+    return $row[0][weekID];
   }
 
   public function getMatchesForWeek(){
