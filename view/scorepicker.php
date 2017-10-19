@@ -12,9 +12,6 @@
 
 <body>
 	<div id="spcontainer">
-<!-- <h1>Hockey Picker</h1> -->
-	 <!-- <?php include "../logic/loginheader.php"; ?>  -->
-
 	<form name="formName" action="../logic/submitguess.php" method="post">
 		<?php
 	  $match = new Match(getDB());
