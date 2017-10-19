@@ -11,6 +11,7 @@ $prizeMoney=1000;
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/prizemoney.css">
+
     <title>Super Skate</title>
   </head>
   <body>
@@ -23,7 +24,8 @@ $prizeMoney=1000;
         <center><strong><?php echo "£".$prizeMoney?></strong></center></h1>
 
 
-        <h2><a href="registernewuser.php">Login</a> to try and win this week.</h2>
+
+        <h2><a class="register" href="registernewuser.php">Login</a> to try and win this week.</h2>
             <h2>Good Luck!</h2>
 
 

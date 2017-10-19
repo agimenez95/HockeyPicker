@@ -64,8 +64,6 @@
 		<div id="Prize Money Box">
 				<?php include 'prizemoney.php'; ?>
 
-
-
 		</div>
 
 
