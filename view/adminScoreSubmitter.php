@@ -12,7 +12,7 @@
 <body>
   <h1>Hockey Picker</h1>
 	<?php include "../logic/loginheader.php"; ?>
-	<form action="../logic/submitguess.php" method="post">
+	<form name="formName" action="../logic/submitActualResults.php" method="post">
 		<?php
 	  $match = new Match(getDB());
 	  $games = $match->getMatchesForWeek();
@@ -30,7 +30,6 @@
 		?>
     <input type="submit" value="Submit">
   </form>
-  <script src='../scripts/changescore.js'></script>
-  <!-- <script src='../scripts/submitguess.js'></script> -->
+  <script src='../scripts/changescore.js' type="text/javascript"></script>
 </body>
 </html>

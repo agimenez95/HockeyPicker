@@ -38,7 +38,8 @@ create table Matchup (
   awayTeamID int not null,
   homeGoals int,
   awayGoals int,
-  actualResult boolean DEFAULT FALSE
+  actualResult boolean DEFAULT FALSE,
+  weekID int DEFAULT 1
 );
 
 drop table if exists Teams;

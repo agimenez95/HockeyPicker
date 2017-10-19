@@ -7,7 +7,12 @@ function changeScore(team, gameid, action) {
       score -= 1;
     }
     document.getElementById(team+gameid).innerHTML = score;
-    document.getElementsByName(team+gameid).value = score;
-    //console.log(document.getElementsByName(team+gameid).value);
+    var elems = document.getElementsByName("formName")[0].getElementsByTagName("input");
+    for(var i = 0; i < elems.length; i++) {
+      var string = toString(team+gameid);
+      if(elems[i].name === team+gameid){
+        elems[i].setAttribute("value", document.getElementById(team+gameid).innerHTML);
+      }
+    }
   }
 }
