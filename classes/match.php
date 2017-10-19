@@ -34,6 +34,30 @@ class Match {
     return $this->db->commit();
   }
 
+  public function setScoresForWeek(array $scores, array $fixtures) {
+    $this->db->beginTransaction();
+    for ($i=0; $i<6 ; $i++) {
+      $stmt = $this->db->prepare("
+          update
+          Matchup
+            set homeGoals = :home_goal,
+                awayGoals = :away_goal
+          where (homeTeamID = :homeid and awayTeamID = :awayid and actualResult = TRUE)
+      ");
+      $worked = $stmt->execute([
+          'home_goal' => $scores['home'.$i],
+          'away_goal' => $scores['away'.$i],
+          'homeid' => $fixtures[$i]['homeTeamID'],
+          'awayid' => $fixtures[$i]['awayTeamID'],
+      ]);
+      if (!$worked){
+          $this->db->rollback();
+          return false;
+      }
+    }
+    return $this->db->commit();
+  }
+
   public function getLatestWeek(){
     $s = $this->db->prepare("
       select weekID from Matchup
@@ -47,6 +71,8 @@ class Match {
     }
     return $row[0][weekID];
   }
+
+
 
   public function getMatchesForWeek(){
     $s = $this->db->prepare("
