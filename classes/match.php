@@ -13,7 +13,7 @@ class Match {
       $stmt = $this->db->prepare("
           insert into
           Matchup ( homeTeamID,  awayTeamID, actualResult)
-          values      (:homeTeam_id, :awayTeam_id, TRUE)
+          values (:homeTeam_id, :awayTeam_id, TRUE)
       ");
       $worked = $stmt->execute([
           'homeTeam_id' => $match['home'],

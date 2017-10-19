@@ -1,7 +1,8 @@
 <?php
+require '../logic/prereq.php';
 var_dump($_POST);
 
-if (isset($_SESSION["userId"] )) {
+if (isset($_SESSION["userId"])) {
   # code...
   echo $_SESSION["userId"];
 } else {
