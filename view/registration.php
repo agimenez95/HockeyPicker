@@ -49,11 +49,11 @@
       <tr>
         <td>Favourite team: </td>
         <td>   <?php echo "<select name='bonusPlayer'>";
-							$bpm = new bonusplayermanager(getDB());
-							$allPlayers = $bpm->showAllOptions();
-							foreach ($allPlayers as $value) {
-								$punditsBonusPlayerID = $bpm->byPlayerName($value);
-								echo "<option value =".$punditsBonusPlayerID.">$value</option>";
+							$tm = new TeamManager(getDB());
+							$allTeams = $tm->showAllOptions();
+							foreach ($allTeams as $value) {
+								$punditsFaveTeam = $tm->byID($value);
+								echo "<option value =".$punditsFaveTeam.">$value</option>";
 							}
 						echo "</select>"; ?></td>
       </tr>

@@ -22,5 +22,21 @@ class TeamManager {
     $team->fromArray($row);
     return $team;
   }
+
+
+  public function showAllOptions(){
+    $teams = [];
+    $teamID = [];
+    $r = $this->db->query(
+      "select name from Teams order by name asc"
+    );
+
+    foreach ($r as $row) {
+      array_push($teams, $row['name']);
+    }
+
+    return $teams;
+
+  }
 }
 ?>
