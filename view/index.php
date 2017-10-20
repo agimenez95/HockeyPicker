@@ -18,6 +18,10 @@
 
 	<div class="flex-item" id="header">
 	<img id="logo" src="../logo.png"></img>
+	<div id="Prize Money Box">
+			<?php include 'prizemoney.php'; ?>
+
+	</div>
 	<!-- <h1 id ="nameHockey"></h1> -->
 	<?php
 	if (isset($_SESSION['login'])) {

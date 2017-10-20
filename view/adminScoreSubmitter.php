@@ -12,13 +12,12 @@
 </head>
 
 <body>
-<<<<<<< HEAD
+
   <?php include 'pageheader.php' ?>
 	<h1>Admin Score Selector</h1>
 
-=======
-  <h1>Admin Results Generator</h1>
->>>>>>> 56962771a50da66ccebf246c580550cc9e984841
+
+
 	<form name="formName" action="../logic/submitActualResults.php" method="post">
 		<?php
 	  $match = new Match(getDB());

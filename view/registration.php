@@ -1,4 +1,5 @@
 <?php
+	include_once '../logic/prereq.php';
 	include('../includes/sessions.inc.php');
 	if(isset($_SESSION['login'])){
 		header("location: ../view/index.php");
@@ -47,7 +48,14 @@
       </tr>
       <tr>
         <td>Favourite team: </td>
-        <td><input type='text' name='teamSupport' /></td>
+        <td>   <?php echo "<select name='bonusPlayer'>";
+							$bpm = new bonusplayermanager(getDB());
+							$allPlayers = $bpm->showAllOptions();
+							foreach ($allPlayers as $value) {
+								$punditsBonusPlayerID = $bpm->byPlayerName($value);
+								echo "<option value =".$punditsBonusPlayerID.">$value</option>";
+							}
+						echo "</select>"; ?></td>
       </tr>
       <tr>
         <td><input type='submit' name='submit'/></td>
