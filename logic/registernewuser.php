@@ -13,7 +13,7 @@ check_in_range($start_date, $dob, $username, $pword, $pword2, $_POST);
 //check to see that age cannot be
 
 //redirect to give error messages
-if(isset($_SESSION['userExists']) || isset($_SESSION['pwordMatch'])){
+if(isset($_SESSION['pword'])){
   header('Location: ../view/registration.php');
 } else {
   header('Location: ../view/index.php');
@@ -38,12 +38,11 @@ function passwordCheck($username, $pword, $pword2, $post){
   if ($customer){
     $_SESSION['userExists'] = 1;
     populateSession($post);
-  }
-  if ($pword !== $pword2) {
-    $_SESSION['pwordMatch'] = 1;
-    populateSession($post);
-  }
-  if ($pword === $pword2 && $customer) {
+    if ($pword !== $pword2) {
+      $_SESSION['pwordMatch'] = 1;
+      populateSession($post);
+    }
+  } else {
     $customer = new Customer();
     $customer->fromArray($post);
     $customer->setPword(password_hash($pword, PASSWORD_DEFAULT));
