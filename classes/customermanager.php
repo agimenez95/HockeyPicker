@@ -57,7 +57,6 @@ class CustomerManager {
     );
     echo $cust->getTeamSupport();
     if (!$worked) {
-      echo "hello";
       return false;
     }
     $cust->setID($this->db->lastInsertId());

@@ -49,12 +49,13 @@
       <tr>
         <td>Favourite team: </td>
         <td>
-					<?php echo "<select name='teamSupport'>";
+					<?php
+					echo "<select name='teamSupport'>";
 					$tm = new TeamManager(getDB());
 					$allTeams = $tm->showAllOptions();
-					foreach ($allTeams as $value) {
-						$punditsFaveTeam = $tm->byID($value);
-						echo "<option value ='$punditsFaveTeam'>$value</option>";
+					foreach ($allTeams as $key => $value) {
+						//$punditsFaveTeam = $tm->byID($value);
+						echo "<option value ='$key'>$value</option>";
 					}
 					echo "</select>";
 					?>

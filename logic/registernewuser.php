@@ -37,11 +37,9 @@ function passwordCheck($username, $pword, $pword2, $post){
     $_SESSION['pwordMatch'] = 1;
   } else {
     $customer = new Customer();
-    echo $post['teamSupport'];
     $customer->fromArray($post);
     $customer->setPword(password_hash($pword, PASSWORD_DEFAULT));
     $custmanager->save($customer);
-    echo "yes";
     //header('Location: ../view/index.php');
   }
 }
