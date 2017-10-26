@@ -55,7 +55,6 @@ class CustomerManager {
        'teamSupport' => $cust->getTeamSupport(),
        'email' => $cust->getEmail()]
     );
-    echo $cust->getFirstname(), $cust->getSurname(), $cust->getUsername(), $cust->getDOB(), $cust->getPword(), $cust->getTeamSupport(), $cust->getEmail();
     if (!$worked) {
       echo "hello";
       return false;
