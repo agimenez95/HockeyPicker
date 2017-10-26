@@ -12,6 +12,12 @@ $start_date = '1917-01-01';
 check_in_range($start_date, $dob, $username, $pword, $pword2, $_POST);
 //check to see that age cannot be
 
+//redirect to give error messages
+if(isset($_SESSION['userExists']) || isset($_SESSION['pwordMatch'])){
+  header('Location: ../view/registration.php');
+} else {
+  header('Location: ../view/index.php');
+}
 
 function check_in_range($start_date, $dob, $username, $pword, $pword2, $post) {
   // Convert to timestamp
@@ -31,23 +37,17 @@ function passwordCheck($username, $pword, $pword2, $post){
   $customer = $custmanager->byUsername($username);
   if ($customer){
     $_SESSION['userExists'] = 1;
-  } else if($pword == "") {
-    $_SESSION['pwordEmpty'] = 1;
-  } else if ($pword !== $pword2) {
+  }
+  if ($pword !== $pword2) {
     $_SESSION['pwordMatch'] = 1;
-  } else {
+  }
+  if ($pword === $pword2 && $customer) {
     $customer = new Customer();
     $customer->fromArray($post);
     $customer->setPword(password_hash($pword, PASSWORD_DEFAULT));
     $custmanager->save($customer);
-    header('Location: ../view/index.php');
   }
+
 }
-
-
-
-
-
-
 
 ?>

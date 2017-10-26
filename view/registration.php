@@ -29,10 +29,20 @@
       <tr>
         <td>Username: </td>
         <td><input type='text' name='username' required/></td>
+				<?php
+				if (isset($_SESSION['userExists'])) {
+					echo "<td>This username already exists!</td>";
+				}
+				?>
       </tr>
       <tr>
         <td>Password: </td>
         <td><input type='password' name='pword' required/></td>
+				<?php
+				if (isset($_SESSION['pwordMatch'])) {
+					echo "<td>These passwords do not match!</td>";
+				}
+				?>
       </tr>
       <tr>
         <td>Re-enter password: </td>
@@ -66,5 +76,13 @@
       </tr>
     </form>
   </table>
+	<?php
+	if (isset($_SESSION['pwordMatch'])) {
+		unset($_SESSION['pwordMatch']);
+	}
+	if (isset($_SESSION['userExists'])) {
+		unset($_SESSION['userExists']);
+	}
+	?>
 </body>
 </html>
