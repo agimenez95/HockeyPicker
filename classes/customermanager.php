@@ -41,6 +41,7 @@ class CustomerManager {
   }
 
   public function save(Customer $cust){
+    $this->db->beginTransaction();
     $r = $this->db->prepare("
         insert into Customer (firstname, surname, username, DOB, dateStarted, pword, teamSupport, email)
         values (:firstname, :surname, :username, :dob, now(), :pword, :teamSupport, :email)
@@ -54,10 +55,12 @@ class CustomerManager {
        'teamSupport' => $cust->getTeamSupport(),
        'email' => $cust->getEmail()]
     );
+    echo $cust->getTeamSupport();
     if (!$worked) {
       return false;
     }
     $cust->setID($this->db->lastInsertId());
+    $this->db->commit();
     return true;
   }
 }

@@ -28,15 +28,16 @@ class TeamManager {
     $teams = [];
     $teamID = [];
     $r = $this->db->query(
-      "select name from Teams order by name asc"
+      "select id, name from Teams order by name asc"
     );
 
     foreach ($r as $row) {
-      array_push($teams, $row['name']);
+      //array_push($teams, $row['name']);
+      $teams[$row['id']] = $row['name'];
     }
 
     return $teams;
-
+    //return $r;
   }
 }
 ?>

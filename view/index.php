@@ -72,8 +72,8 @@
 
 
 
-	<div id ="Score Picker">
-		<?php include 'scorepicker.php'; ?>
+	<div id ="Score Picker" style="color:black">
+		<?php include 'rulesofthegame.php' ?>
 
 	</div>
 

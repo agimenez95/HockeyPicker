@@ -1,6 +1,9 @@
 <?php
 	include_once '../logic/prereq.php';
   include '../logic/singlePicker.php';
+	if (!isset($_SESSION['userId'])){
+		header('Location: ../view/index.php');
+	}
 ?>
 <!doctype html>
 <html>
