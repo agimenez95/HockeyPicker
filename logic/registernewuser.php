@@ -26,8 +26,8 @@ function check_in_range($start_date, $dob, $username, $pword, $pword2, $post) {
   $user_ts = date('Y-m-d', strtotime($dob));
   // Check that user date is between start & end
   if (($user_ts < $start_ts) || ($user_ts > $end_ts)){
-    echo "problem";
     $_SESSION['dobProb'] = 1;
+    populateSession($post);
   }
   passwordCheck($username, $pword, $pword2, $post);
 }
@@ -37,9 +37,11 @@ function passwordCheck($username, $pword, $pword2, $post){
   $customer = $custmanager->byUsername($username);
   if ($customer){
     $_SESSION['userExists'] = 1;
+    populateSession($post);
   }
   if ($pword !== $pword2) {
     $_SESSION['pwordMatch'] = 1;
+    populateSession($post);
   }
   if ($pword === $pword2 && $customer) {
     $customer = new Customer();
@@ -47,7 +49,17 @@ function passwordCheck($username, $pword, $pword2, $post){
     $customer->setPword(password_hash($pword, PASSWORD_DEFAULT));
     $custmanager->save($customer);
   }
+}
 
+function populateSession($post){
+  $_SESSION['firstname'] = $post['firstname'];
+  $_SESSION['surname'] = $post['surname'];
+  $_SESSION['username'] = $post['username'];
+  $_SESSION['pword'] = $post['pword'];
+  $_SESSION['pword2'] = $post['pword2'];
+  $_SESSION['DOB'] = $post['DOB'];
+  $_SESSION['email'] = $post['email'];
+  $_SESSION['teamSupport'] = $post['teamSupport'];
 }
 
 ?>

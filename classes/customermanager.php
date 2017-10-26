@@ -55,7 +55,6 @@ class CustomerManager {
        'teamSupport' => $cust->getTeamSupport(),
        'email' => $cust->getEmail()]
     );
-    echo $cust->getTeamSupport();
     if (!$worked) {
       return false;
     }
