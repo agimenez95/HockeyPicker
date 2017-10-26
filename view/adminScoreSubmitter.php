@@ -16,8 +16,6 @@
   <?php include 'pageheader.php' ?>
 	<h1>Admin Score Selector</h1>
 
-
-
 	<form name="formName" action="../logic/submitActualResults.php" method="post">
 		<?php
 	  $match = new Match(getDB());
