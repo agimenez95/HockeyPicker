@@ -40,7 +40,7 @@ function passwordCheck($username, $pword, $pword2, $post){
     $customer->fromArray($post);
     $customer->setPword(password_hash($pword, PASSWORD_DEFAULT));
     $custmanager->save($customer);
-    //header('Location: ../view/index.php');
+    header('Location: ../view/index.php');
   }
 }
 
