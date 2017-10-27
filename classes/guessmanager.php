@@ -29,6 +29,45 @@ class GuessManager {
     $this->db->commit();
   }
 
+  public function getCustomerGuessDetails($currentWeek){
+    $s = $this->db->prepare("
+      select id, customerID, bonusPlayerID
+      from Guess where weekID = :currentWeek
+    ");
+    $s->execute([
+        'currentWeek' => $currentWeek
+    ]);
+    $row = $s ->fetchAll();
+    if (!$row){
+        return null;
+    }
+    echo "Guess Details";
+    echo PHP_EOL;
+    var_dump($row);
+    echo PHP_EOL;
+
+    return $row;
+  }
+
+  public function getPredictionDetails($guess) {
+    $s = $this->db->prepare("
+      select id, matchupID
+      from Prediction where guessID = :guess_id
+    ");
+    $s->execute([
+        'guess_id' => $guess
+    ]);
+    $row = $s ->fetchAll();
+    if (!$row){
+        return null;
+    }
+    echo "Prediction Details";
+    echo PHP_EOL;
+    var_dump($row);
+    echo PHP_EOL;
+    return $row;
+  }
+
   public function references($matchID, $guessID) {
     $this->db->beginTransaction();
     $stmt = $this->db->prepare("
@@ -46,5 +85,7 @@ class GuessManager {
     }
     $this->db->commit();
   }
+
+
 }
 ?>

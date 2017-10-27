@@ -4,7 +4,24 @@
   $matchManager = new Match(getDB());
   $currentWeekId = $matchManager->getLatestWeek();
   $weekResults = $matchManager->getCurrentWeekResults($currentWeekId);
-  echo $weekResults[4][homeGoals];
+  $guessManager = new GuessManager(getDB());
+  $guesses = $guessManager->getCustomerGuessDetails($currentWeekId);
+  $predictionInfo = $guessManager->getPredictionDetails($guesses[0]['id']);
+
+  foreach ($guesses as $key => $guess) {
+    $customersPredictions = $guessManager->getPredictionDetails($guess['id']);
+    foreach ($customersPredictions as $key => $prediction) {
+      $customerMatchPrediction = $matchManager->getCustomerPrediction($prediction['matchupID']);
+      if ($customerMatchPrediction['homeGoals'] == $weekResults[$key]['homeGoals']
+          && $customerMatchPrediction['awayGoals'] == $weekResults[$key]['awayGoals']
+          ) {
+        $correctPredictionCounter++;
+        echo $correctPredictionCounter;
+        echo PHP_EOL;
+      }
+    }
+  }
+
 
   function comparePredictionsAgainstResult() {
     // itterate through each prediction in the database and compare to result array,

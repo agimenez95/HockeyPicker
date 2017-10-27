@@ -101,7 +101,7 @@ class Match {
 
   public function getCurrentWeekResults($weekID) {
     $s = $this->db->prepare("
-      select homeTeamID, awayTeamID, homeGoals, awayGoals from Matchup
+      select id, homeTeamID, awayTeamID, homeGoals, awayGoals from Matchup
       where (actualResult = TRUE and weekID = :currentWeek)
     ");
     $s->execute([
@@ -111,7 +111,25 @@ class Match {
     if (!$result){
         return null;
     }
+    return $result;
+  }
+
+  public function getCustomerPrediction($matchupId) {
+    $s = $this->db->prepare("
+      select homeTeamID, awayTeamID, homeGoals, awayGoals from Matchup
+      where (actualResult = FALSE and id = :matchupID)
+    ");
+    $s->execute([
+        'matchupID' => $matchupId
+    ]);
+    $result = $s->fetchAll();
+    if (!$result){
+        return null;
+    }
+    echo "Customer Prediction";
+    echo PHP_EOL;
     var_dump($result);
+    echo PHP_EOL;
     return $result;
   }
 
@@ -131,7 +149,6 @@ class Match {
     if (!$row){
         return null;
     }
-    //var_dump($row);
     return $row;
   }
 }
