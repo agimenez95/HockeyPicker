@@ -41,10 +41,10 @@ class GuessManager {
     if (!$row){
         return null;
     }
-    echo "Guess Details";
-    echo PHP_EOL;
-    var_dump($row);
-    echo PHP_EOL;
+    // echo "Guess Details";
+    // echo PHP_EOL;
+    // var_dump($row);
+    // echo PHP_EOL;
 
     return $row;
   }
@@ -61,10 +61,10 @@ class GuessManager {
     if (!$row){
         return null;
     }
-    echo "Prediction Details";
-    echo PHP_EOL;
-    var_dump($row);
-    echo PHP_EOL;
+    // echo "Prediction Details";
+    // echo PHP_EOL;
+    // var_dump($row);
+    // echo PHP_EOL;
     return $row;
   }
 

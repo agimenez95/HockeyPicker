@@ -6,26 +6,27 @@
   $weekResults = $matchManager->getCurrentWeekResults($currentWeekId);
   $guessManager = new GuessManager(getDB());
   $guesses = $guessManager->getCustomerGuessDetails($currentWeekId);
-  $predictionInfo = $guessManager->getPredictionDetails($guesses[0]['id']);
 
   foreach ($guesses as $key => $guess) {
     $customersPredictions = $guessManager->getPredictionDetails($guess['id']);
     foreach ($customersPredictions as $key => $prediction) {
       $customerMatchPrediction = $matchManager->getCustomerPrediction($prediction['matchupID']);
-      if ($customerMatchPrediction['homeGoals'] == $weekResults[$key]['homeGoals']
-          && $customerMatchPrediction['awayGoals'] == $weekResults[$key]['awayGoals']
-          ) {
-        $correctPredictionCounter++;
-        echo $correctPredictionCounter;
+      if (($customerMatchPrediction[0]['homeGoals'] == $weekResults[$key]['homeGoals']) &&
+          ($customerMatchPrediction[0]['awayGoals'] == $weekResults[$key]['awayGoals']) ) {
+        $correctScoreCounter++;
+        echo $correctScoreCounter;
+        echo " correct guess on matchid: ";
+        echo $prediction['matchupID'];
         echo PHP_EOL;
+        if ($correctScoreCounter == 6) {
+          echo 'Customer ';
+          echo $guess['customerID'];
+          echo ' You guessed all 6 correctly!';
+          echo PHP_EOL;
+        }
       }
     }
-  }
-
-
-  function comparePredictionsAgainstResult() {
-    // itterate through each prediction in the database and compare to result array,
-    // if prediction has 6/6 raise winner flag else you lost (5/6, bonusPlayer)
+    $correctScoreCounter = 0;
   }
 
 ?>

@@ -59,10 +59,8 @@ class Match {
   }
 
   public function setGuessForTheWeek($homeid, $awayid, $homegoals, $awaygoals, $week){
-    if ($week == null) {
+    if ($week === null) {
       $week = 1;
-    } else {
-      $week ++;
     }
     $this->db->beginTransaction();
     $stmt = $this->db->prepare("
@@ -102,7 +100,7 @@ class Match {
   public function getCurrentWeekResults($weekID) {
     $s = $this->db->prepare("
       select id, homeTeamID, awayTeamID, homeGoals, awayGoals from Matchup
-      where (actualResult = TRUE and weekID = :currentWeek)
+      where (actualResult = 1 and weekID = :currentWeek)
     ");
     $s->execute([
         'currentWeek' => $weekID
@@ -117,7 +115,7 @@ class Match {
   public function getCustomerPrediction($matchupId) {
     $s = $this->db->prepare("
       select homeTeamID, awayTeamID, homeGoals, awayGoals from Matchup
-      where (actualResult = FALSE and id = :matchupID)
+      where (actualResult = 0 and id = :matchupID)
     ");
     $s->execute([
         'matchupID' => $matchupId
@@ -126,10 +124,10 @@ class Match {
     if (!$result){
         return null;
     }
-    echo "Customer Prediction";
-    echo PHP_EOL;
-    var_dump($result);
-    echo PHP_EOL;
+    // echo "Customer Prediction ";
+    // echo PHP_EOL;
+    // var_dump($result);
+    // echo PHP_EOL;
     return $result;
   }
 
