@@ -1,135 +1,30 @@
-<?php
-	require '../logic/prereq.php';
-?>
-<!doctype html>
-<html>
+<?php include_once '../logic/prereq.php';?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<title>Super Skate</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link href="../css/homepage.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="/css/menubar.css">
+    <title>Super Skate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css"/>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
-
 <body>
+ <!-- include('../logic/pickTeamColor.php')  -->
+    <?php include_once('../includes/productHeader.inc.php'); ?>
+    <?php include_once('../includes/navBar.inc.php'); ?>
 
-<div class="flex-container">
+    <div class="container contentBanner">
+        <div class="">
+            <h2 class="txt-ctr txt-underline marb-0">
 
-	<div class="flex-item" id="header">
-	<img id="logo" src="../logo.png"></img>
-	<div id="Prize Money Box">
-			<?php include 'prizemoney.php'; ?>
+            </h2>
 
-	</div>
-	<!-- <h1 id ="nameHockey"></h1> -->
-	<?php
-	if (isset($_SESSION['login'])) {
-	  include('../includes/session-logout.inc.php');
-	} else {
-	  include('../includes/session-login.inc.php');
-	}
-	?>
-	<!-- <a id="loginLink" href="../logic/loginheader.php">Login/Register</a> -->
-
-		<!-- <a id="login" href="registernewuser.php">Register New User</a> -->
-	</div>
-
-
-	<div class="flex-item" id="menubar">
-
-
-				<table id="menu">
-			 <tr>
-					<th>Results</th>
-					<th><a href="rules.php">How to play</a></th>
-					<th>News</th>
-					<th>League Tables</th>
-					<th>Settings</th>
-					<th>Feedback</th>
-				</tr>
-
-			</table>
-	</div>
-
-	<div class="flex-item" id="MainBodyContainer">
-
-
-
-
-	<div class="flex-item" id ="leftside">
-
-
-						<div id="Prize Money Box">
-								<?php include 'prizemoney.php'; ?>
-
-						</div>
-
-	</div>
-
-	<div class="flex-item" id="MainBody">
-
-
-
-
-	<div id ="Score Picker">
-		<?php include 'scorepicker.php'; ?>
-
-	</div>
-
-
-
-</div>
-</div>
-
-
-<div class="flex-item" id="footer">
-	<em>Footer</em>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<?php
-		//include "../logic/loginheader.php";
-	?>
-
-
- <?php
-	// if (isset($_SESSION['login'])) {
-	// 	echo '<p><a href="scorepicker.php">Pick your scores</a></p>';
-	// }
-	// else {
-	// 	echo '<p>You need an account to be able to select your scores!</p>';
-	// }
-	?>
-
-
-
-
-</div>
-
-
-
-<script src="../../../jquery-3.2.1.min.js"></script> <script src="../../../main.js"></script>
-
+    </div>
+    <?php include_once('../includes/footer.inc.php'); ?>
 </body>
+    <script src="js/jquery-3.2.1.min.js"></script>
+
 </html>

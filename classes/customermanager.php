@@ -23,6 +23,23 @@ class CustomerManager {
     return $cust;
   }
 
+  // public function byIdFaveTeam($id){
+  //   $s = $this->db->prepare("
+  //     select
+  //         id, teamSupport
+  //     from Customer
+  //     where id = :id
+  //   ");
+  //   $s->execute(['id' => $id]);
+  //   $row = $s->fetch();
+  //   if (!$row){
+  //       return null;
+  //   }
+  //   $custPref = new Customer($this->db);
+  //   $cust->fromArray($row);
+  //   return $custPref;
+  // }
+
   public function byUsername($username){
     $s = $this->db->prepare("
           select

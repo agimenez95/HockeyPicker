@@ -1,11 +1,11 @@
-#menubar {
+/*#menubar {
   background:  #009EDA ;
   border-style: groove;
 }
 
 table {
   /* display: flex; */
-  /* justify-content: stretch; */
+  /* justify-content: stretch;
   width: 100%;
 }
 
@@ -16,4 +16,4 @@ th {
 
 th:hover {
   color: black;
-}
+}*/
