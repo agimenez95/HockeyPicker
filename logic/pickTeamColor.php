@@ -1,10 +1,13 @@
 <?php
 
 $teamID = 1;
-
-$customermanager = new CustomerManager(getDB());
-$customer = $customermanager->byId($_SESSION['userId']);
-$teamID=$customer->getTeamSupport();
+if (isset($_SESSION['userId'])) {
+  $customermanager = new CustomerManager(getDB());
+  $customer = $customermanager->byId($_SESSION['userId']);
+  $teamID=$customer->getTeamSupport();
+} else {
+  $teamID = -1;
+}
 
 
 //Carolina Hurricanes

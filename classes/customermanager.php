@@ -72,12 +72,13 @@ class CustomerManager {
        'teamSupport' => $cust->getTeamSupport(),
        'email' => $cust->getEmail()]
     );
-    echo $cust->getTeamSupport();
     if (!$worked) {
+      echo "hello";
       return false;
     }
-    $cust->setID($this->db->lastInsertId());
     $this->db->commit();
+    $cust->setID($this->db->lastInsertId());
+
     return true;
   }
 }

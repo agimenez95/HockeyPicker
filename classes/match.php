@@ -99,7 +99,21 @@ class Match {
     return $row[0][weekID];
   }
 
-
+  public function getCurrentWeekResults($weekID) {
+    $s = $this->db->prepare("
+      select homeTeamID, awayTeamID, homeGoals, awayGoals from Matchup
+      where (actualResult = TRUE and weekID = :currentWeek)
+    ");
+    $s->execute([
+        'currentWeek' => $weekID
+    ]);
+    $result = $s->fetchAll();
+    if (!$result){
+        return null;
+    }
+    var_dump($result);
+    return $result;
+  }
 
   public function getMatchesForWeek(){
     $s = $this->db->prepare("
@@ -117,8 +131,25 @@ class Match {
     if (!$row){
         return null;
     }
-    //var_dump($row);
     return $row;
+  }
+
+  public function haveScoresBeenSubmitted(){
+    $s = $this->db->prepare("
+      select homeGoals
+      from Matchup
+      where actualResult = TRUE
+      order by id desc limit 1
+    ");
+    $s->execute();
+    $row = $s->fetchAll();
+    if (!$row){
+      return null;
+    }
+    if (is_null($row[0]['homeGoals'])) {
+      return "-1";
+    }
+    return $row[0]['homeGoals'];
   }
 }
 ?>

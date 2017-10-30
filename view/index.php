@@ -12,15 +12,19 @@
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
- <!-- include('../logic/pickTeamColor.php')  -->
-    <?php include_once('../includes/productHeader.inc.php'); ?>
-    <?php include_once('../includes/navBar.inc.php'); ?>
+  <?php
+  include('../logic/pickTeamColor.php');
+  include_once('../includes/productHeader.inc.php');
+  include_once('../includes/navBar.inc.php');
+  ?>
 
     <div class="container contentBanner">
         <div class="">
             <h2 class="txt-ctr txt-underline marb-0">
 
             </h2>
+
+            <?php include('rulesofthegame.php'); ?>
 
     </div>
     <?php include_once('../includes/footer.inc.php'); ?>

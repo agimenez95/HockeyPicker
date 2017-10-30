@@ -1,6 +1,19 @@
 <?php
 	include_once '../logic/prereq.php';
   include '../logic/singlePicker.php';
+	if (!isset($_SESSION['userId'])){
+		header('Location: ../view/index.php');
+	}
+	$match = new Match(getDB());
+	$score = $match->haveScoresBeenSubmitted();
+	if($score !== "-1"){
+		header('Location: ../view/index.php');
+	}
+	$guessmanager = new GuessManager(getDB());
+	if($guessmanager->didIGuess($match->getLatestWeek(), $_SESSION['userId']) === "-1"){
+		//you already guessed
+		header('Location: ../view/youAlreadyGuessed.php');
+	};
 ?>
 <!doctype html>
 <html>

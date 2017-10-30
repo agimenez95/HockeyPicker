@@ -1,5 +1,5 @@
 <?php
-	require '../logic/prereq.php';
+	include_once '../logic/prereq.php';
 ?>
 <!doctype html>
 <html>
