@@ -23,6 +23,40 @@ class CustomerManager {
     return $cust;
   }
 
+  public function getUsername($id) {
+    $s = $this->db->prepare("
+      select username
+      from Customer
+      where id = :id
+    ");
+    $s->execute([
+        'id' => $id
+    ]);
+    $row = $s ->fetchAll();
+    if (!$row){
+        return null;
+    }
+    return $row;
+  }
+
+  public function getAllUsers(){
+    $s = $this->db->prepare("
+      select id, username, pword, firstname, surname, DOB, email, teamSupport, datestarted
+      from Customer
+      order by id
+    ");
+    $s->execute();
+    $rows = $s ->fetchAll();
+    if (!$rows){
+        return null;
+    }
+    $customers = array();
+    foreach ($rows as $key => $row) {
+      $customers[$row["id"]] = $row;
+    }
+    return $customers;
+  }
+
   public function byUsername($username){
     $s = $this->db->prepare("
           select
