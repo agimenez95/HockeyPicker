@@ -86,6 +86,20 @@ class GuessManager {
     $this->db->commit();
   }
 
-
+  public function didIGuess($week, $uid) {
+    $s = $this->db->prepare("
+      select * from Guess
+      where (weekID = :week and customerID = :custid)
+    ");
+    $s->execute([
+        'week' => $week,
+        'custid' => $uid
+    ]);
+    $result = $s->fetchAll();
+    if (!$result){
+        return null;
+    }
+    return "-1";
+  }
 }
 ?>

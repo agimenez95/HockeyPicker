@@ -149,5 +149,23 @@ class Match {
     }
     return $row;
   }
+
+  public function haveScoresBeenSubmitted(){
+    $s = $this->db->prepare("
+      select homeGoals
+      from Matchup
+      where actualResult = TRUE
+      order by id desc limit 1
+    ");
+    $s->execute();
+    $row = $s->fetchAll();
+    if (!$row){
+      return null;
+    }
+    if (is_null($row[0]['homeGoals'])) {
+      return "-1";
+    }
+    return $row[0]['homeGoals'];
+  }
 }
 ?>

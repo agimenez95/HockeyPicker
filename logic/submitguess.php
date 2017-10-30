@@ -28,5 +28,5 @@ for ($i=0; $i < 6; $i++) {
   $gman->references($matchid, $guessid);
 }
 
-header('Location: ../view/index.php');
+header('Location: ../view/submissionConfirmed.php');
 ?>
