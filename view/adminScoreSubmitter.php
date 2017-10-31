@@ -24,7 +24,7 @@
         <div class="">
             <h2 class="txt-ctr txt-underline marb-0">
 
-							<h1>Admin Score Selector</h1>
+							<h1 style="text-align:center;">Admin Score Selector</h1>
 							<div id='adminScore'>
 							<form name="formName" action="../logic/submitActualResults.php" method="post">
 								<?php
@@ -43,25 +43,7 @@
 									}
 								echo "</select>";
 ?>
-	<h1>Admin Score Selector</h1>
 
-	<form name="formName" action="../logic/submitActualResults.php" method="post">
-		<?php
-	  $match = new Match(getDB());
-	  $games = $match->getMatchesForWeek();
-	  for ($i=0; $i < 6; $i++) {
-	    singlePicker($games[$i]["homeTeamID"], $games[$i]["awayTeamID"], $i);
-	  }
-		echo "<div class='bpbox'>";
-    echo "<select name='bonusPlayer'>";
-			$bpm = new bonusplayermanager(getDB());
-			$allPlayers = $bpm->showAllOptions();
-			foreach ($allPlayers as $value) {
-				$punditsBonusPlayerID = $bpm->byPlayerName($value);
-				echo "<option value =".$punditsBonusPlayerID.">$value</option>";
-			}
-		echo "</select>";
-		?>
 		<div id="submitButtonAd">
     	<input type="submit" value="Submit">
 		</div>

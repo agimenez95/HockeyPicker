@@ -1,6 +1,6 @@
 html,
 body {
-    height: 100% !important;
+    min-height: 100% !important;
     width: 100% !important;
     font-family: 'Arial';
     font-size: 1em;
@@ -285,8 +285,9 @@ body {
     padding: 0;
     margin: 0;
     background-color: rgb(85, 85, 84);
+    overflow: hidden;
 
-    position: fixed;
+    top: 0px;
     width: 100%;
     display: flex;
 }
@@ -302,6 +303,8 @@ body {
     vertical-align: middle;
     padding: 0 12px;
 }
+
+
 
 .product-image-large {
     height: 20px;
@@ -319,15 +322,29 @@ body {
 
 #navHeader {
 
+
+  top: 27px;
+
     outline: none;
     width: 100%;
     height: auto;
     color: black;
     background: black 20%;
     background-image: url('../iceback.png');
-    position: static;
     border-bottom: darkslategray 2px solid;
 }
+
+@media only screen and (min-height:650px) {
+  #product-wrapper{
+    position: sticky;
+  }
+
+  #navHeader{
+    position: sticky;
+  }
+
+}
+
 
 #logoDiv {
     width: 230px;
@@ -471,7 +488,11 @@ label{
   align-content: center;
   text-decoration: none;
   padding: 10px;
+  color:white;
+  }
 
+.scorePickerBtn .btn:hover{
+  color:#1aa2db;
 }
 
 .scorePickerBtn .btn {
@@ -483,6 +504,28 @@ label{
   background-color: black;
   width: 35px;
   text-decoration: none;
+
+}
+
+.bpbox select{
+  background-color: black;
+  color: white;
+  width:175px;
+  font-size: 20px;
+
+}
+
+.bpbox{
+  display: flex;
+justify-content: space-around;
+}
+
+.bpbox input{
+
+  font-weight: bold;
+  border: 2px black groove;
+  width: 100px;
+  background-color: darkslategray;
 
 }
 
@@ -515,7 +558,14 @@ select {
 
 #submitButtonAdmin{
   width: 100%;
+  padding: 20px;
+  padding-bottom: 60px;
+  display: flex;
   justify-content: center;
+}
+
+#submitButtonAdmin .btn{
+  border: black 2px groove;
 }
 
 #regTable{
@@ -524,7 +574,7 @@ select {
   color: black;
   width: 100%;
   align-items: center;
-  padding: 30px;
+  padding: 40px;
   font-weight: bold;
 }
 #regTable tbody{
@@ -541,8 +591,9 @@ select {
 }
 
 #regTable tr .btn{
-  padding: 10px;
   font-weight: bold;
+  border: 2px black groove;
+  width: 100px;
 
 
 }
@@ -550,13 +601,14 @@ select {
 #regTable select{
   background-color: black;
   color: white;
+  width:175px;
 }
 
-#differentBtn{
-  display: flex;
-    align-items: center;
-    justify-content: flex-start;
+#regTable input{
+  width:175px;
 }
+
+
 
 
 

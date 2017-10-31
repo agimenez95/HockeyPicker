@@ -21,10 +21,10 @@
 	<?php include_once('../includes/productHeader.inc.php'); ?>
 	<?php include_once('../includes/navBar.inc.php'); ?>
 
-	<div class="container contentBanner">
+	<div class="container contentBanner" >
 	    <div class="">
   <table id="regTable">
-    <form action='../logic/registernewuser.php' method='post'>
+    <form  action='../logic/registernewuser.php' method='post'>
       <tr>
         <td>First Name: </td>
 				<?php
@@ -127,8 +127,8 @@
 					?>
 					</td>
       </tr>
-      <tr id="differentBtn">
-        <td><input type='submit' class="btn" name='submit'/></td>
+      <tr >
+        <td><input id="differentBtn" type='submit' class="btn" name='submit'/></td>
       </tr>
     </form>
   </table>
