@@ -31,7 +31,7 @@ foreach ($r as $row){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../css/homepage.css"/>
 <link rel="stylesheet" href="../css/scorepickerblock.css">
 <link rel="icon" href="img/logo.png" type="image/x-icon">
@@ -66,15 +66,19 @@ foreach ($r as $row){
           <?php endforeach;?>
         </select>
       </div>
+
     </div>
     <?php
       endfor;
     ?>
-    </div>
-    <div id="submitButtonAdmin">
-    <button class="btn" type="submit" >Submit matches for the week</button>
-  </div>
+
+
+        <div id="submitButtonAdmin">
+        <button class="btn" type="submit" >Submit matches for the week</button>
+      </div>
+
   </form>
+</div>
 </div>
 </div>
 <?php include_once('../includes/footer.inc.php'); ?>

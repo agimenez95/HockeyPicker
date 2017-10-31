@@ -13,7 +13,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css">
-	    <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
+	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="../css/homepage.css"/>
 	    <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
@@ -21,10 +21,10 @@
 	<?php include_once('../includes/productHeader.inc.php'); ?>
 	<?php include_once('../includes/navBar.inc.php'); ?>
 
-	<div class="container contentBanner">
+	<div class="container contentBanner" >
 	    <div class="">
-  <table>
-    <form action='../logic/registernewuser.php' method='post'>
+  <table id="regTable">
+    <form  action='../logic/registernewuser.php' method='post'>
       <tr>
         <td>First Name: </td>
 				<?php
@@ -127,8 +127,8 @@
 					?>
 					</td>
       </tr>
-      <tr>
-        <td><input type='submit' name='submit'/></td>
+      <tr >
+        <td><input id="differentBtn" type='submit' class="btn" name='submit'/></td>
       </tr>
     </form>
   </table>

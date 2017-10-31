@@ -1,6 +1,35 @@
-<h1>Rules of the Game</h1>
+<div id="rules">
+<h1
+  style="text-align:center;">Rules of the Game</h1>
+<h3>How to Play</h3>
+<p> Six NHL matches will be picked by us each week.  All you need to do to have
+  a chance at winning the jackpot is register and submit your predictions.
+  Make sure these predictions are submitted before the start of the first game! </p>
+
+<h3> What is the Bonus Player?</h3>
+<p> The Bonus Player is the player you think will score the most goals that week.
+  If you get the Bonus Player correct your prize money will increase, so make sure
+  you pick carefully!!</p>
+
+<h3> How do I win? </h3>
+<p> There are 3 different prizes you can win each week....</p>
+<ol>
+  <li> First Prize - </li>
+  <li> Second Prize - </li>
+  <li> Third Prize - </li>
+</ol>
+<br>
+<p> If noone wins anything for the previous week, the prize money will increase
+  by ____ .  Please see the current prize fund on this page. </p>
 <h3>Requirements</h3>
-<p>To be able to enter to play this game you must register with a valid account to be able to make your predictions.</p>
-<p>You can only access the game once you have registered.</p>
-<h3>Terms and Conditions</h3>
-<p>In this version of the game we are not liable to give you the money as this is not for commercial use.</p>
+<ul>
+  <li> You must have an account and be registered to Super Skate with a valid email.</li>
+  <li> You can only have one account per user. </li>
+  <li> You must be logged in before you can submit your predictions.</li>
+  <li> You may only submit one prediction each week </li>
+</ul>
+
+<br>
+<h4 style="text-align:center;"> Good Luck! </h4>
+
+</div>

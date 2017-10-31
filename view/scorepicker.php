@@ -1,5 +1,6 @@
 <?php
 	include_once '../logic/prereq.php';
+	include_once '../logic/pickTeamColor.php';
   include '../logic/singlePicker.php';
 	if (!isset($_SESSION['userId'])){
 		header('Location: ../view/index.php');
