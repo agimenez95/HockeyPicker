@@ -5,7 +5,7 @@ body {
     font-family: 'Roboto';
     font-size: 1em;
     background-color: #1aa2db;
-    color: black;
+    color: white;
 }
 
 .h-34 {
@@ -468,7 +468,7 @@ label{
 }
 .matchSelector{
   padding: 5px;
-  border: 2px solid black;
+  border: 3px solid darkslategray;
   margin: 15px;
   width: 400px;
   justify-content: center;
@@ -634,11 +634,12 @@ select {
 
 }
 
-#rules{
+#rules ,#spcontainer{
   background-color: rgba(0, 0, 0, 0.40);
 border-color: black;
 border-width: medium;
 border-style: ridge;
 padding: 10px;
 margin-top: 10px;
+
 }
