@@ -2,7 +2,7 @@ html,
 body {
     min-height: 100% !important;
     width: 100% !important;
-    font-family: 'Arial';
+    font-family: 'Roboto';
     font-size: 1em;
     background-color: #1aa2db;
     color: black;
@@ -621,4 +621,24 @@ select {
 #btnReg{
   border-color: darkslategray;
   border-style: groove;
+}
+
+
+
+
+
+
+#rulecontainer{
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+
+#rules{
+  background-color: rgba(0, 0, 0, 0.40);
+border-color: black;
+border-width: medium;
+border-style: ridge;
+padding: 10px;
+margin-top: 10px;
 }
