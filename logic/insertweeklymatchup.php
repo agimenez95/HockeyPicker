@@ -1,11 +1,8 @@
 <?php
     require 'prereq.php';
-    $_SESSION['bonusPlayer'] = $_POST['bonusPlayer'];
-    $topScorerOfTheWeek = $_POST['bonusPlayer'];
     $matchTrial = New Match(getDB());
     $matchTrial->setMatchesForWeek($_POST['matches']);
     $matchTrial->getMatchesForWeek();
-    $matchTrial->setTopScorer($topScorerOfTheWeek);
 ?>
 
 <!DOCTYPE html>

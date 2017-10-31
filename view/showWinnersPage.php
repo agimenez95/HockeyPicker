@@ -12,10 +12,9 @@
   $guesses = $guessManager->getCustomerGuessDetails($currentWeekId);
   $customerManager = new CustomerManager(getDB());
   $customers =$customerManager->getAllUsers();
-  $winningCustomers = array();
-
-  echo $topScorer;
-  echo PHP_EOL;
+  $firstCustomers = array();
+  $secondCustomers = array();
+  $thirdCustomers = array();
 
   foreach ($guesses as $key => $guess) {
     $customersPredictions = $guessManager->getPredictionDetails($guess['id']);
@@ -30,16 +29,16 @@
       }
     }
     if ($correctScoreCounter == 6 && $guessedPlayerCorrectly) {
-      array_push($winningCustomers,$customers[$guess['customerID']]['username']);
-      $someoneHasWon = TRUE;
+      array_push($firstCustomers,$customers[$guess['customerID']]['username']);
     }
     else if ($correctScoreCounter == 6) {
-      echo 'you got second prize';
+      array_push($secondCustomers,$customers[$guess['customerID']]['username']);
     }
     else if ($correctScoreCounter == 5 && $guessedPlayerCorrectly) {
-      echo 'you got third prize';
+      array_push($thirdCustomers,$customers[$guess['customerID']]['username']);
     }
     $correctScoreCounter = 0;
+    $guessedPlayerCorrectly = FALSE;
   }
 
 ?>
@@ -53,15 +52,30 @@
   <body>
     <h1>Super Skate Winners</h1>
     <?php
-      if ($someoneHasWon) {
-        echo "<h2>This week's Super Skate winners are:</h2>";
-        foreach ($winningCustomers as $winningCustomer) {
-          echo "<h3>$winningCustomer</h3>";
-        }
-        echo "<h2>Congratulations!</h2>";
+      if (empty($firstCustomers) && empty($secondCustomers) && empty($thirdCustomers)) {
+        echo "<h2>Nobody has won the jackpot this week, better luck next time!</h2>";
       }
       else {
-        echo "<h2>Nobody has won the jackpot this week, better luck next time!</h2>";
+        echo "<h2>This week's Super Skate winners</h2>";
+        if (!empty($thirdCustomers)) {
+          echo "<h3>Third Jackpot:</h3>";
+          foreach ($thirdCustomers as $thirdCustomer) {
+            echo "<h4>$thirdCustomer</h4>";
+          }
+        }
+        if (!empty($secondCustomers)) {
+          echo "<h3>Second Jackpot:</h3>";
+          foreach ($secondCustomers as $secondCustomer) {
+            echo "<h4>$secondCustomer</h4>";
+          }
+        }
+        if (!empty($firstCustomers)) {
+          echo "<h3>First Jackpot:</h3>";
+          foreach ($firstCustomers as $firstCustomer) {
+            echo "<h4>$firstCustomer</h4>";
+          }
+        }
+        echo "<h2>Congratulations!</h2>";
       }
     ?>
   </body>
