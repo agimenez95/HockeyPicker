@@ -19,6 +19,7 @@
             <ul id="navList" class="list-inline">
                 <li><a href="index.php">How To Play</a></li>
                 <li><a href="scorepicker.php">Predictions</a></li>
+                <li><a href="showWinnersPage.php">Did You Win?</a></li>
                 <li><a href="https://www.nhl.com/standings">League Tables</a></li>
                 <li><a href="https://www.nhl.com/news">News</a></li>
             </ul>
