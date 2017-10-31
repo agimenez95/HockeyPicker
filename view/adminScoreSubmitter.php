@@ -42,7 +42,7 @@
 										echo "<option value =".$punditsBonusPlayerID.">$value</option>";
 									}
 								echo "</select>";
-?>
+								?>
 
 		<div id="submitButtonAd">
     	<input type="submit" value="Submit">
