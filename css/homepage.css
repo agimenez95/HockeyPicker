@@ -441,9 +441,6 @@ label{
   font-size: small;
 }
 
-.submit1{
-  font-size: small;
-}
 
 .matchContainer{
   display: flex;
@@ -519,4 +516,57 @@ select {
 #submitButtonAdmin{
   width: 100%;
   justify-content: center;
+}
+
+#regTable{
+  display: flex;
+  justify-content: center;
+  color: black;
+  width: 100%;
+  align-items: center;
+  padding: 30px;
+  font-weight: bold;
+}
+#regTable tbody{
+  width:100%;
+}
+
+#regTable td{
+  padding: 10px;
+}
+
+#regTable tr{
+  padding: 10px;
+
+}
+
+#regTable tr .btn{
+  padding: 10px;
+  font-weight: bold;
+
+
+}
+
+#regTable select{
+  background-color: black;
+  color: white;
+}
+
+#differentBtn{
+  display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+/*Login box format*/
+
+.loginBox{
+  padding: 1px;
+}
+
+#btnReg{
+  border-color: darkslategray;
+  border-style: groove;
 }

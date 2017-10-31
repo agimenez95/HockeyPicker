@@ -23,7 +23,7 @@
 
 	<div class="container contentBanner">
 	    <div class="">
-  <table>
+  <table id="regTable">
     <form action='../logic/registernewuser.php' method='post'>
       <tr>
         <td>First Name: </td>
@@ -127,8 +127,8 @@
 					?>
 					</td>
       </tr>
-      <tr>
-        <td><input type='submit' name='submit'/></td>
+      <tr id="differentBtn">
+        <td><input type='submit' class="btn" name='submit'/></td>
       </tr>
     </form>
   </table>

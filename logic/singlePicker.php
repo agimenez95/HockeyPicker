@@ -24,5 +24,3 @@ function singlePicker($team1ID, $team2ID, $game){
         </table>";
   echo "</div>";
 }
-
-?>

@@ -6,15 +6,19 @@
 ?>
 <div id="loginContainer">
 <form id="loginForm" name="loginForm" method="post" action="../logic/checklogin.php">
-  <label for="username">Username</label>
+<div class="loginBox">
+  <label style="width:60px;" for="username">Username</label>
   <input name="username" type="text" id="username">
-  <label for="password">Password</label>
+</div>
+<div class="loginBox">
+  <label style="width:60px;" for="password">Password</label>
   <input name="password" type="password" id="password">
-  <div id="buttonsSubmit">
-  <input type="submit" name="Submit" class="submit1" value="Login">
+</div>
+  <div class="loginBox">
+  <input style="float:left; font-size:10px;" type="submit" id="btnReg" name="Submit" class="btn" value="Login">
 </form>
 <form name="loginForm" action="../view/registration.php">
-  <input type="submit" id="needAccount" class="submit1" value="Register"/>
+  <input style="float:right; font-size:10px;" type="submit" id="btnReg" class="btn" value="Register"/>
 </div>
 </form>
 </div>

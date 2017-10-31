@@ -6,4 +6,3 @@ spl_autoload_register(function ($className){
 });
 
 include('../includes/sessions.inc.php');
-?>
