@@ -59,6 +59,7 @@ function populateSession($post){
   $_SESSION['DOB'] = $post['DOB'];
   $_SESSION['email'] = $post['email'];
   $_SESSION['teamSupport'] = $post['teamSupport'];
+  header('Location: ../view/registration.php');
 }
 
 ?>
