@@ -39,7 +39,7 @@ class GuessManager {
     ]);
     $row = $s ->fetchAll();
     if (!$row){
-        return null;
+        return array();
     }
     // echo "Guess Details";
     // echo PHP_EOL;

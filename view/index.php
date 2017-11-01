@@ -13,30 +13,22 @@
 </head>
 <body>
   <?php
-  include('../logic/pickTeamColor.php');
-  include_once('../includes/productHeader.inc.php');
-  include_once('../includes/navBar.inc.php');
+    include('../logic/pickTeamColor.php');
+    include_once('../includes/productHeader.inc.php');
+    include_once('../includes/navBar.inc.php');
   ?>
 
-    <div class="container contentBanner">
-        <div class="">
-            <h2 class="txt-ctr txt-underline marb-0">
-
-            </h2>
-
-            <div id="rulecontainer">
-
-
-
-            <?php include('rulesofthegame.php');
-                  include('prizemoney.php')?>
-
-              </div>
-
-
+  <div class="container contentBanner">
+      <div class="">
+        <h2 class="txt-ctr txt-underline marb-0"></h2>
+        <div id="rulecontainer">
+          <?php include('rulesofthegame.php');
+                include('prizemoney.php')
+          ?>
+        </div>
+      </div>
+      <?php include_once('../includes/footer.inc.php'); ?>
     </div>
-    <?php include_once('../includes/footer.inc.php'); ?>
-</body>
-    <script src="js/jquery-3.2.1.min.js"></script>
-
+  </body>
+  <script src="js/jquery-3.2.1.min.js"></script>
 </html>

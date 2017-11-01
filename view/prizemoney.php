@@ -23,11 +23,7 @@ $prizeMoney=100000;
         <h1>Win<br><br>
         <center><strong><?php echo "£".$prizeMoney?></strong></center></h1>
 
-
-
-
-
-              </form>
+        </form>
 
     </div>
 

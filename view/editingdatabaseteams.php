@@ -77,7 +77,7 @@ foreach ($r as $row){
 
 
         <div id="submitButtonAdmin">
-        <button class="btn" type="submit" >Submit matches for the week</button>
+        <button style="background-color:darkslategray;" class="btn" type="submit" >Submit matches for the week</button>
       </div>
 
   </form>
