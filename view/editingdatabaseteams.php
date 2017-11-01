@@ -43,7 +43,9 @@ foreach ($r as $row){
 	<div class="container contentBanner">
 			<div class="">
 
-
+  <!--Creating a form for all the information from the select drop downs to be sent
+   to insertWeeklyMatchup.php -->
+   
   <h1>NHL Gotta pick 'em all - Admin Fixture Selector</h1>
   <form action="../logic/insertweeklymatchup.php" method="post">
     <div class="matchContainer">
