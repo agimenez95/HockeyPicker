@@ -14,13 +14,13 @@
 <h3> How do I win? </h3>
 <p> There are 3 different prizes you can win each week....</p>
 <ol>
-  <li> First Prize - </li>
-  <li> Second Prize - </li>
-  <li> Third Prize - </li>
+  <li> First Prize - £100,000</li>
+  <li> Second Prize - £75,000</li>
+  <li> Third Prize -£50,000 </li>
 </ol>
 <br>
 <p> If noone wins anything for the previous week, the prize money will increase
-  by ____ .  Please see the current prize fund on this page. </p>
+  by £10,000 .  Please see the current prize fund on this page. </p>
 <h3>Requirements</h3>
 <ul>
   <li> You must have an account and be registered to Super Skate with a valid email.</li>
