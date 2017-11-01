@@ -1,5 +1,5 @@
 #PrizeMoneyContainer {
-    background-color: rgba(0, 0, 0, 0.40);
+  background-color: rgba(0, 0, 0, 0.40);
   border-color: black;
   border-width: medium;
   border-style: ridge;
@@ -24,7 +24,6 @@
 }
 
 .prizeMoneyDisplay h1 center {
-
   font-size: 30px;
   color: white;
   font-weight: bolder;
@@ -32,13 +31,12 @@
 
 .prizeMoneyDisplay h2 {
   font-size: 5px;
-
 }
 
 .prizeMoneyDisplay h2 a {
   color: white;
 }
 
-.prizeMoneyDisplay h2 a:hover{
-  color:grey;
+.prizeMoneyDisplay h2 a:hover {
+  color: grey;
 }
