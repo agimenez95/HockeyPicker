@@ -1,3 +1,6 @@
+<?php
+  include_once '../logic/prereq.php';
+?>
 <!DOCTYPE html>
 <html>
   <head>

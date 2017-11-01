@@ -30,8 +30,9 @@ function check_in_range($start_date, $dob, $username, $pword, $pword2, $post) {
     populateSession($post);
     passwordCheck($username, $pword, $pword2, $post);
     header('Location: ../view/registration.php');
+  } else {
+    passwordCheck($username, $pword, $pword2, $post);
   }
-  passwordCheck($username, $pword, $pword2, $post);
 }
 
 function passwordCheck($username, $pword, $pword2, $post){
