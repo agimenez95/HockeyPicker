@@ -13,7 +13,7 @@ check_in_range($start_date, $dob, $username, $pword, $pword2, $_POST);
 //check to see that age cannot be
 
 //redirect to give error messages
-if(isset($_SESSION['pword'])){
+if(isset($_SESSION['pword']) || isset($_SESSION['pword'])){
   header('Location: ../view/registration.php');
 } else {
   header('Location: ../view/index.php');
@@ -22,12 +22,14 @@ if(isset($_SESSION['pword'])){
 function check_in_range($start_date, $dob, $username, $pword, $pword2, $post) {
   // Convert to timestamp
   $start_ts = strtotime($start_date);
-  $end_ts = date('Y-m-d');
-  $user_ts = date('Y-m-d', strtotime($dob));
+  $end_ts = strtotime(date('Y-m-d'));
+  $user_ts = strtotime(date('Y-m-d', strtotime($dob)));
   // Check that user date is between start & end
   if (($user_ts < $start_ts) || ($user_ts > $end_ts)){
     $_SESSION['dobProb'] = 1;
     populateSession($post);
+    passwordCheck($username, $pword, $pword2, $post);
+    header('Location: ../view/registration.php');
   }
   passwordCheck($username, $pword, $pword2, $post);
 }
@@ -41,8 +43,15 @@ function passwordCheck($username, $pword, $pword2, $post){
     if ($pword !== $pword2) {
       $_SESSION['pwordMatch'] = 1;
       populateSession($post);
+      header('Location: ../view/registration.php');
     }
+    header('Location: ../view/registration.php');
   } else {
+    if ($pword !== $pword2) {
+      $_SESSION['pwordMatch'] = 1;
+      populateSession($post);
+      header('Location: ../view/registration.php');
+    }
     $customer = new Customer();
     $customer->fromArray($post);
     $customer->setPword(password_hash($pword, PASSWORD_DEFAULT));
@@ -59,7 +68,6 @@ function populateSession($post){
   $_SESSION['DOB'] = $post['DOB'];
   $_SESSION['email'] = $post['email'];
   $_SESSION['teamSupport'] = $post['teamSupport'];
-  header('Location: ../view/registration.php');
 }
 
 ?>

@@ -98,6 +98,9 @@
 				} else {
 					echo "<td><input type='date' name='DOB' required/></td>";
 				}
+				if (isset($_SESSION['dobProb'])) {
+					echo "<td>This date is not within a valid life range!</td>";
+				}
 				?>
 				<!-- <td><input type='date' name='DOB' required/></td> -->
       </tr>
@@ -138,6 +141,9 @@
 	}
 	if (isset($_SESSION['userExists'])) {
 		unset($_SESSION['userExists']);
+	}
+	if (isset($_SESSION['dobProb'])) {
+		unset($_SESSION['dobProb']);
 	}
 	if (isset($_SESSION['pword'])) {
 		unset($_SESSION['firstname']);

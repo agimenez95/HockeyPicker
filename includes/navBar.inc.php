@@ -11,7 +11,7 @@
           ?>
         </div>
             <div id="logoDiv" class="disp-in padb-8 fs-8">
-                <a href="../index.php"><img src="../logo.png" alt="logo"></a>
+                <a href="../view/index.php"><img src="../logo.png" alt="logo"></a>
             </div>
 
         </div>
