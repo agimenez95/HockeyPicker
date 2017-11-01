@@ -2,12 +2,12 @@
 include_once '../logic/prereq.php';
 $pdo = getDB();
 
+// Pulling team name and id data from the database
 $teams = array();
-
 $r = $pdo->query(
     "select name, id from Teams order by name asc"
 );
-
+// Assigning the Team ID as the key for the Team name
 foreach ($r as $row){
     $teams[$row['id']] = $row['name'];
 }
@@ -42,6 +42,9 @@ foreach ($r as $row){
 
 	<div class="container contentBanner">
 			<div class="">
+
+  // Creating a form for all the information from the select drop downs to be sent
+  // to insertWeeklyMatchup.php
   <h1>NHL Gotta pick 'em all - Admin Fixture Selector</h1>
   <form action="../logic/insertweeklymatchup.php" method="post">
     <div class="matchContainer">

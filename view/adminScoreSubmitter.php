@@ -20,6 +20,9 @@
     <?php include_once('../includes/productHeader.inc.php'); ?>
     <?php include_once('../includes/navBar.inc.php'); ?>
 
+		// getMatchesForWeek() used to populate the singlePicker with correct
+		// team names, form is then sent to submitActualResults upon pressing
+		// the submit button
     <div class="container contentBanner">
         <div class="">
             <h2 class="txt-ctr txt-underline marb-0">

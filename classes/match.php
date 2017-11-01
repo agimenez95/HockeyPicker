@@ -7,6 +7,10 @@ class Match {
       $this->db = $db;
   }
 
+  // Function only to be used when admin is submitting fixtures
+  // scores left as null at this stage because games yet to be played
+  // actualResult set to TRUE to distinguish between the official results
+  // and punters predictions
   public function setMatchesForWeek(array $matches){
     $week = $this->getLatestWeek();
     if ($week == null) {
@@ -34,6 +38,8 @@ class Match {
     return $this->db->commit();
   }
 
+  // Updates the matchups scores that have been previously set which have an
+  // actualResult of True, teamIDs used to find correct row
   public function setScoresForWeek(array $scores, array $fixtures) {
     $this->db->beginTransaction();
     for ($i=0; $i<6 ; $i++) {
